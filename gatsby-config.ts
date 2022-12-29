@@ -1,4 +1,4 @@
-import type { GatsbyConfig } from "gatsby";
+import type {GatsbyConfig} from "gatsby";
 
 const config: GatsbyConfig = {
   siteMetadata: {
@@ -33,7 +33,14 @@ const config: GatsbyConfig = {
       "path": "./src/pages/"
     },
     __key: "pages"
-  }]
+  }, {
+    resolve: 'gatsby-source-filesystem',
+    options: {
+      "name": "posts",
+      "path": "./content/blog/"
+    },
+    __key: "blog"
+  }, "gatsby-plugin-playground"]
 };
 
 export default config;
